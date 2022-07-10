@@ -1,0 +1,144 @@
+body{
+    margin: 0;
+}
+
+#title{
+    background: linear-gradient(220deg,#00628B 0%, #00628B 40%);  
+    margin: 0;
+}
+.container-fluid{
+    padding: 3% 15% 3%;
+}
+.navigation{
+    background-color: #00628B;
+}
+#profile-pic{
+    border-radius: 160px 140px 80px 140px;
+    width: 45%;
+    margin: 10% 10% 10% 45%;   
+}
+.name{
+    font-size: 3.8rem;
+    display: block;
+    color: #fff;
+}
+.intro-text{
+    color: #fff;
+    margin-top: 15%;
+    font-size: 1.5rem;
+}
+.intro-text-item{
+    margin-top: 15%;
+}
+svg{
+    display: block;
+    margin: 0;
+}
+.about-page{
+    background-color: #E6E6DC;
+    padding: 7% 15%;
+}
+#about-title{
+    font-size: 2.5rem;
+    margin-bottom: 6%;
+    margin-left: 40%;
+    padding-bottom: 4%;
+    
+}
+.gif-image{
+    width: 100%;
+    margin: 5% ;
+}
+.about-text{
+    line-height: 1.5;
+    margin-left: 4%;
+    font-size: 1.5rem;
+}
+.about-text-intro{
+    display: block;
+    font-weight: bold;
+}
+.about-text-intro-name{
+    color: #00628B;
+
+}
+#btn-download-cv{
+    margin-left: 4%;
+    margin-top: 5%;
+    background-color: #00628B;
+}
+#btn-download-cv:hover{
+    background-color: #00618bcb;
+}
+.contact-page{
+    background-color: #E6E6DC;
+    padding: 7% 15%;
+}
+#contact-title{
+    font-size: 2.5rem;
+    margin-bottom: 6%;
+    margin-left: 40%;
+    padding-bottom: 4%;
+}
+.cont-methods{
+    display: inline;
+}
+.cont-link{
+    font-size: 1.5rem;
+    color: #00628B;
+}
+.cont-address{
+    color: #00628B;
+}
+#btn-send{
+    background-color: #00628B;
+    color: #fff;
+    margin-left: 2%;
+}
+#btn-send:hover{
+    background-color: #00618bcb;
+}
+#cprt-text{
+    color: #fff;
+    margin-top: 3%;
+    padding-left: 85%;    
+}
+@media (max-width: 992px)
+{
+
+    #profile-pic{
+        border-radius: 100%;
+        width: 24%;
+        margin: 4% 38% 2% 38%; 
+    }
+    .intro-text{
+        margin-top: 40px;
+        
+    }  
+    .intro-text-item{
+        margin-top: 2%;
+        margin-left: 10%;
+    }
+}
+@media (max-width: 544px)
+{
+    .name{
+        font-size: 2.4rem;
+    }
+    #about-title{
+        font-size: 2rem;
+        margin-left: 30%;
+        margin-top: 40px;
+    }
+    #contact-title{
+        font-size: 2rem;
+        margin-left: 25%;
+        margin-top: 40px;
+    }
+    #cprt-text{
+        padding-left: 75%;
+    }
+
+    
+}
+
