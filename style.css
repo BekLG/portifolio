@@ -1,9 +1,8 @@
 body{
     margin: 0;
 }
-
-#title{
-    background: linear-gradient(220deg,#00628B 0%, #00628B 40%);  
+.main-div{
+    background-color: #00628B;  
     margin: 0;
 }
 .container-fluid{
@@ -11,6 +10,19 @@ body{
 }
 .navigation{
     background-color: #00628B;
+    align-items: center;
+}
+.logo-pic{
+    margin-left: 4%;
+}
+.nav-lists{
+    margin-right: 12%;
+}
+#btnNightDay{
+    margin-left: 8px;
+    padding: 0 8px 0 8px;
+    font-size: 2rem;
+    border-radius: 15%;
 }
 #profile-pic{
     border-radius: 160px 140px 80px 140px;
@@ -48,6 +60,7 @@ svg{
 .gif-image{
     width: 100%;
     margin: 5% ;
+    border-radius: 8% 0 0 28%;
 }
 .about-text{
     line-height: 1.5;
@@ -62,12 +75,12 @@ svg{
     color: #00628B;
 
 }
-#btn-download-cv{
+.btn-download-cv{
     margin-left: 4%;
     margin-top: 5%;
-    background-color: #00628B;
+    /* background-color: #00628B; */
 }
-#btn-download-cv:hover{
+.btn-download-cv:hover{
     background-color: #00618bcb;
 }
 .contact-page{
@@ -82,6 +95,11 @@ svg{
 }
 .cont-methods{
     display: inline;
+    color: black;
+    text-decoration: underline;
+}
+.cont-methods:hover{
+    color: #00628B;
 }
 .cont-link{
     font-size: 1.5rem;
@@ -90,12 +108,12 @@ svg{
 .cont-address{
     color: #00628B;
 }
-#btn-send{
+.btn-send, .btn-reset{
     background-color: #00628B;
     color: #fff;
-    margin-left: 2%;
+    margin-top: 10px;
 }
-#btn-send:hover{
+.btn-send:hover{
     background-color: #00618bcb;
 }
 #cprt-text{
@@ -103,6 +121,24 @@ svg{
     margin-top: 3%;
     padding-left: 85%;    
 }
+
+.dark1{
+    background-color: #100F0F;
+    color: #F1F1F1;
+    fill: #100F0F;
+}
+.dark2{
+    background-color: #0F3D3E;
+    color: #F1F1F1;
+    fill: #0F3D3E;
+}
+.dark-item1{
+    color: #F1F1F1;
+}
+.dark-item2{
+    color: #0F3D3E;
+}
+
 @media (max-width: 992px)
 {
 
@@ -122,6 +158,10 @@ svg{
 }
 @media (max-width: 544px)
 {
+    #profile-pic{
+        width: 34%;
+        margin: 4% 33% 2% 33%; 
+    }
     .name{
         font-size: 2.4rem;
     }
