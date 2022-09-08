@@ -1,6 +1,6 @@
 $("#btnNightDay").click(function(){
 
-    $(".navigation").toggleClass("dark1");
+    $(".navigation").toggleClass("dark2");
     $(".main-div").toggleClass("dark2");
     $(".name").toggleClass("dark2");
     $(".intro-text").toggleClass("dark2");
