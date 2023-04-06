@@ -8,7 +8,6 @@
 	<meta name="description" content="Computer science student in St.Mary's Univeristy Addis ababa Ethiopia" />
 
 
-    <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
      <!-- google font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,7 +15,8 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
   <!-- font awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
 
 
     <title>Bereket</title>
@@ -56,7 +56,7 @@
       <div class="row" id="homepage">
 
         <div class="col-lg-6">
-            <img id="profile-pic" src="bekimg.HEIC" alt="img-profile">
+            <img id="profile-pic" src="pic5.jpg" alt="img-profile">
         </div>
         <div class="col-lg-6 intro-text">
             <p class="intro-text-item" >Hello world, i'm <span class="name">Bereket Legesse</span> front-end developer</p>
@@ -85,6 +85,32 @@
             </div>
         </div>        
     </div>
+
+    <!-- projects page -->
+
+    <div class="projects-page" id="projects-page">
+        <h1>projects</h1>
+
+        <div class="card">
+            <div class="card-body">
+              <div class="card-header">
+                <h3 class="card-title">Title of the Project</h3>
+              </div>
+              <div class="card-image">
+                <img src="/public/projectimg.png" alt="Image">
+              </div>
+              <div class="card-description">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac metus ac elit commodo efficitur et eget elit. Nulla volutpat accumsan magna, in facilisis nunc commodo ut.</p>
+              </div>
+              <div class="card-buttons">
+                <a href="https://github.com/user/repo" class="btn-primary">Github</a>
+                <a href="https://live-url.com" class="btn-secondary">View Detail</a>
+              </div>
+            </div>
+          </div>
+
+    </div>
+
     <!-- contact page -->
 
     <div class="contact-page" id="contactpage" >
@@ -103,26 +129,7 @@
             </div>
             <div class="col-lg-7">
                 <div class="row">
-                    <!-- <div class="col-lg-6 col-md-6">
-                        <label for="name-holder" class="form-label" >Your name</label>
-                        <input type="text" class="form-control" id="name-holder" >
-                    </div> -->
-                    <!-- <div class="col-lg-6 col-md-6 ">
-                        <label for="email-holder" class="form-label" >Your Email</label>
-                        <input type="text" class="form-control" id="email-holder" placeholder="name@example.com">        
-                    </div> 
-
-                    <div class="mb-3 col-lg-12 col-md-12">
-                        <label for="subject-holder" class="form-label" >subject</label>
-                        <input type="text" class="form-control" id="subject-holder" >
-        
-                    </div>
-                    <div class="mb-3 col-lg-12 col-md-12">
-                        <label for="message-holder" class="form-label" >Your message</label>
-                        <textarea class="form-control" id="message-holder" rows="3" ></textarea>
-                    </div>
-                    <button class="btn btn-lg btn-outline-primary col-lg-4 col-md-6 " id="btn-send"><i class="fa">&#xf14c;</i> send</button> -->
-    
+               
                     <form action="https://formspree.io/f/xoqbvylp" method="post">
                         <label for="name-holder" class="form-label" >Your name</label>
                         <input type="text" class="form-control" id="name-holder" name="Name" required>
@@ -146,12 +153,11 @@
     </div>
 
     <p id="cprt-text"><i class="fa">&#xf1f9;</i>Bereket</p>
-
   
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="index.js"></script>
+<script src="javascript/index.js"></script>
 </body>
 </html>
