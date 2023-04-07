@@ -22,7 +22,7 @@ const projectSchema= new mongoose.Schema({
 });
 
 
-const project= new mongoose.model("Project", projectSchema);
+const Project= new mongoose.model("project", projectSchema);
 
 
 
@@ -32,6 +32,29 @@ app.get("/", function(req,res){
 
 app.get("/add-project", function(req,res){
     res.render("addProject");
+})
+app.post("/add-project", function(req,res){
+
+   const title= req.body.title;
+   const imageLink= req.body.imgLink;
+   const description=req.body.shortDescription;
+   const detailedDescription=req.body.detailedDescription;
+   const githubLink= req.body.githubLink;
+   const demoLink= req.body.demoLink;
+    
+    const project = new Project({
+        title: title,
+        imageLink: imageLink,
+        description: description,
+        detailedDescription: detailedDescription,
+        githubLink: githubLink,
+        demoLink: demoLink
+      });
+    
+      project.save();
+    
+      res.redirect("/"); 
+
 })
 
 
