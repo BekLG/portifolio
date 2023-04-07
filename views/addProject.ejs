@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+     <!-- google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu" rel="stylesheet">
+  <!-- font awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="css/admin.css">
+
+    <title>add projects</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Project Submission Form</h1>
+    </div>
+
+    <div class="container">
+        <form action="#" method="post">
+            <label for="title">Project Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="short-description">Small Description:</label>
+            <textarea id="short-description" name="short-description" rows="2" required></textarea>
+
+            <label for="detailed-description">Detailed Description:</label>
+            <textarea id="detailed-description" name="detailed-description" rows="4" required></textarea>
+
+            <label for="img-link">Image Link:</label>
+            <input type="text" id="img-link" name="img-link" required>
+
+            <label for="github-link">GitHub Link:</label>
+            <input type="text" id="github-link" name="github-link" required>
+
+            <label for="demo-link">Demo Link:</label>
+            <input type="text" id="demo-link" name="demo-link" required>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
