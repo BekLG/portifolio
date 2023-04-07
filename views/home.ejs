@@ -87,29 +87,32 @@
     </div>
 
     <!-- projects page -->
-
     <div class="projects-page" id="projects-page">
-        <h1>projects</h1>
+      <h1>projects</h1>
 
-        <div class="card">
-            <div class="card-body">
-              <div class="card-header">
-                <h3 class="card-title">Title of the Project</h3>
-              </div>
-              <div class="card-image">
-                <img src="/public/projectimg.png" alt="Image">
-              </div>
-              <div class="card-description">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac metus ac elit commodo efficitur et eget elit. Nulla volutpat accumsan magna, in facilisis nunc commodo ut.</p>
-              </div>
-              <div class="card-buttons">
-                <a href="https://github.com/user/repo" class="btn-primary">Github</a>
-                <a href="https://live-url.com" class="btn-secondary">View Detail</a>
-              </div>
+      <%  foundProjects.forEach(function(project){ %> 
+
+         <div class="card">
+          <div class="card-body">
+            <div class="card-header">
+              <h3 class="card-title"><%=project.title%></h3>
+            </div>
+            <div class="card-image">
+              <img src=" <%=project.imageLink%> " alt="Image">
+            </div>
+            <div class="card-description">
+              <p><%=project.description%></p>
+            </div>
+            <div class="card-buttons">
+              <a href=" <%=project.githubLink%> " class="btn-primary">Github</a>
+              <a href=" <%=project.demoLink%> " class="btn-secondary">View Detail</a>
             </div>
           </div>
+        </div> 
+  
+     <% })%> 
 
-    </div>
+  </div>
 
     <!-- contact page -->
 

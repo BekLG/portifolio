@@ -27,7 +27,18 @@ const Project= new mongoose.model("project", projectSchema);
 
 
 app.get("/", function(req,res){
-    res.render("home")
+
+    Project.find({})
+    .then((foundProjectArray)=>{
+
+        console.log(foundProjectArray.title);
+        res.render("home", { foundProjects: foundProjectArray })
+       
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+
 })
 
 app.get("/add-project", function(req,res){
