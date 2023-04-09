@@ -125,6 +125,34 @@ app.post("/addProject", function(req,res){
 
 })
 
+app.post("/updateProject", function(req,res){
+    const id= req.body.projectId;
+    const title= req.body.title;
+    const imageLink= req.body.imgLink;
+    const description=req.body.shortDescription;
+    const detailedDescription=req.body.detailedDescription;
+    const githubLink= req.body.githubLink;
+    const demoLink= req.body.demoLink;
+
+    const query = { _id: id };
+    Project.findOneAndUpdate(query, { 
+        title: title,
+        imageLink: imageLink,
+        description: description,
+        detailedDescription: detailedDescription,
+        githubLink: githubLink,
+        demoLink: demoLink
+     })
+     .then(()=>{
+        console.log(title + " has been updated succesfully");
+        res.redirect("/admin");
+     })
+     .catch((err)=>{
+        console.log(err);
+     })
+            
+})
+
 
 app.listen(3000, function() {
     console.log("Server started on port 3000.");

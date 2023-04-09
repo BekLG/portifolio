@@ -25,7 +25,8 @@
     </div>
 
     <div class="container">
-        <form action="/add-project" method="post">
+        <form action="/updateProject" method="post">
+            <input type="hidden" name="projectId" value="<%=projectId %>" >
             <label for="title">Project Title:</label>
             <input type="text" id="title" name="title" value="<%=title %> " required  >
 
