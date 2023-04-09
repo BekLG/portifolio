@@ -15,50 +15,34 @@
 
   <link rel="stylesheet" href="css/addProject.css">
 
-  <script>
-    const inputField = document.getElementById('short-description');
-    
-    inputField.addEventListener('input', function() {
-      const words = inputField.value.split(' ');
-      if (words.length > 25) {
-        inputField.setCustomValidity('Please enter up to 25 words.');
-      } else {
-        inputField.setCustomValidity('');
-      }
-    });
-    
-    inputField.addEventListener('invalid', function() {
-      inputField.reportValidity();
-    });
-  </script>
 
-    <title>add projects</title>
+    <title>Edit project</title>
 </head>
 
 <body>
     <div class="header">
-        <h1>Project Submission Form</h1>
+        <h1>Project Editing Form</h1>
     </div>
 
     <div class="container">
         <form action="/add-project" method="post">
             <label for="title">Project Title:</label>
-            <input type="text" id="title" name="title" required>
+            <input type="text" id="title" name="title" value="<%=title %> " required  >
 
             <label for="short-description">Small Description:</label>
-            <textarea id="short-description" name="shortDescription" rows="2" required></textarea>
+            <textarea id="short-description" name="shortDescription" value="<%=description %>" rows="2" required></textarea>
 
             <label for="detailed-description">Detailed Description:</label>
-            <textarea id="detailed-description" name="detailedDescription" rows="6" required></textarea>
+            <textarea id="detailed-description" name="detailedDescription" value="<%= detailedDescription %>" rows="6" required></textarea>
 
             <label for="img-link">Image Link:</label>
-            <input type="text" id="img-link" name="imgLink" required>
+            <input type="text" id="img-link" value="<%=imageLink %>" name="imgLink" required>
 
             <label for="github-link">GitHub Link:</label>
-            <input type="text" id="github-link" name="githubLink" required>
+            <input type="text" id="github-link" value="<%=githubLink %>" name="githubLink" required>
 
             <label for="demo-link">Demo Link:</label>
-            <input type="text" id="demo-link" name="demoLink" required>
+            <input type="text" id="demo-link" value="<%=demoLink %>" name="demoLink" required>
 
             <input type="submit" value="Submit">
         </form>

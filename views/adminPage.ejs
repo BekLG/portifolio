@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="css/adminPage.css">
+</head>
+<body>
+    <div class="container">
+        <h1>List of Projects</h1>
+        <table>
+            <tr>
+               
+                <th>Name</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+           
+            <%  foundProjects.forEach(function(project){ %> 
+            <tr>
+                <td><%=project.title%> </td>
+                <td><%=project.description%></td>
+                <td>
+                    <form action="/editProject" method="post">
+                        <input type="hidden" name="projectId" value=<%=project._id%> > </input>
+                        <button class="btn" type="submit">Edit</button>
+                    </form>
+                    <form action="/delete" method="post">
+                        <input type="hidden" name="projectId" value=<%=project._id%> > </input>
+                        <button class="btn btn-delete" type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            <% })%> 
+        </table>
+        <a href="/addProject" id="add-project">Add Project</a>
+    </div>
+</body>
+</html>
