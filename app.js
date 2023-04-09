@@ -68,8 +68,8 @@ app.post("/editProject", function(req,res){
     Project.findById(projectId)
     .then((foundProject)=>{
         const title= foundProject.title;
-        const imageLink= foundProject.imgLink;
-        const description=foundProject.shortDescription;
+        const imageLink= foundProject.imageLink;
+        const description=foundProject.description;
         const detailedDescription=foundProject.detailedDescription;
         const githubLink= foundProject.githubLink;
         const demoLink= foundProject.demoLink;
