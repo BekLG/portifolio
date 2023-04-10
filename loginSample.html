@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Sci-Fi Video Player</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
+    
+    /* Styling for the video container */
+    #video-container {
+      position: relative;
+      height: 100%;
+      width: 100%;
+    }
+    
+    /* Styling for the video */
+    #background-video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      min-height: 100%;
+      background-color: aquamarine;
+    }
+
+    /* Styling for the title */
+    #title {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      font-size: 2rem;
+      color: #fff;
+      text-shadow: 2px 2px 2px #000;
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="video-container">
+    <video id="background-video" autoplay muted loop>
+      <source src="file:///home/bek/Videos/Screencasts/Screencast%20from%2019-01-2023%20%207:39:49%20%E1%8A%A8%E1%88%B0%E1%8B%93%E1%89%B5.webm" type="video/mp4">
+    </video>
+    <h1 id="title">Sci-Fi Video Player</h1>
+  </div>
+</body>
+
+</html>

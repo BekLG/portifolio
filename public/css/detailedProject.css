@@ -1,0 +1,90 @@
+
+      /* detailed view of projects page */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Global Styles */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f7f7f7;
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        font-weight: bold;
+      }
+
+      a {
+        color: #333;
+        text-decoration: none;
+      }
+
+      /* Page Styles */
+      .project {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 2rem;
+      }
+
+      .project-title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+      }
+
+      .project-title h1 {
+        font-size: 2rem;
+      }
+
+      .home-button {
+        background-color: #333;
+        color: #fff;
+        text-transform: uppercase;
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+        font-size: 1rem;
+      }
+
+      .project-image {
+        margin-bottom: 2rem;
+      }
+
+      .project-image img {
+        width: 100%;
+        max-width: 800px;
+        display: block;
+        margin: 0 auto;
+      }
+
+      .project-description {
+        margin-bottom: 2rem;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+
+      .project-buttons {
+        display: flex;
+        justify-content: center;
+      }
+
+      .project-buttons a {
+        display: inline-block;
+        background-color: #00628B;
+        color: #fff;
+        text-transform: uppercase;
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+        font-size: 1rem;
+        margin: 0 1rem;
+        transition: background-color 0.2s ease;
+      }
+
+      .project-buttons a:hover {
+        background-color: #666;
+      }
+    

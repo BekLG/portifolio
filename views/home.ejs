@@ -105,7 +105,15 @@
             </div>
             <div class="card-buttons">
               <a href=" <%=project.githubLink%> " class="btn-primary">Github</a>
-              <a href=" <%=project.demoLink%> " class="btn-secondary">View Detail</a>
+              
+              <form action="/<%=project.title%>" method="post">
+                <input type="hidden" name="projectId" value=" <%=project._id%>">
+                <input type="hidden" name="projectTitle" value=" <%=project.title%>">
+                <button type="submit" class="btn-secondary" >View Detail</button>
+                
+              </form>
+
+             
             </div>
           </div>
         </div> 
