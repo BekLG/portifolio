@@ -2,6 +2,7 @@ const express = require("express");
 const ejs= require("ejs");
 const bodyParser= require("body-parser");
 const mongoose= require("mongoose");
+const lodash= require("lodash");
 
 const app= express();
 
@@ -91,11 +92,6 @@ app.post("/editProject", function(req,res){
     .catch((err)=>{
         console.log(err);
     })
-
-   
-   
-  
-
 })
 
 app.get("/addProject", function(req,res){
@@ -149,10 +145,37 @@ app.post("/updateProject", function(req,res){
      })
      .catch((err)=>{
         console.log(err);
-     })
-            
+     })       
 })
 
+app.post("/:projectTitle", function(req,res){
+
+    
+    const projectTitle= req.params.projectTitle;
+    Project.find({title: projectTitle})
+    .then((foundProject)=>{
+        if(foundProject.length===0)
+        {
+            console.log("no project found!");
+        }
+        else{
+            
+            res.render("detailedProject",
+             {
+                 title: foundProject[0].title,
+                 imageLink: foundProject[0].imageLink,
+                 detailedDescription: foundProject[0].detailedDescription,
+                 githubLink: foundProject[0].githubLink,
+                 demoLink: foundProject[0].demoLink,
+            });
+        }
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+
+   
+})
 
 app.listen(3000, function() {
     console.log("Server started on port 3000.");
