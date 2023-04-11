@@ -146,8 +146,14 @@ svg{
 /* projects-page styles */
 .projects-page
 {
-    
+    padding: 7% 0 7% 0;
     width: auto;
+}
+.project-page-title{
+    font-size: 2.5rem;
+   color: #F1F1F1;
+    margin-left: 40%;
+    padding-bottom: 4%;
 }
 .card {
     width: 350px;
