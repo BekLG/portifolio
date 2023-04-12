@@ -200,22 +200,19 @@ app.post("/:projectTitle", function(req,res){
 app.listen(3000, function(req,res) {
     console.log("Server started on port 3000.");
 
-    Admin.find({email: process.env.EMAIL_2})
+    
+    Admin.find({email: process.env.EMAIL_1})
     .then((foundAdmin)=>{
         if(foundAdmin.length===0)
         {
             console.log("no admin found!");
-
-            const password= bcrypt.hashSync(process.env.PASSWORD_2,10);
-
+            const password= bcrypt.hashSync(process.env.PASSWORD_1,10);
             const admin= new Admin({
-                email: process.env.EMAIL_2,
+                email: process.env.EMAIL_1,
                 password: password,
             })
             admin.save();
             console.log(password);
-            console.log("admin saved succesfully");
-
         }
         else{
             
@@ -224,12 +221,6 @@ app.listen(3000, function(req,res) {
     })
     .catch((err)=>{
         console.log(err);
-    })
-  
-
-            
-            console.log(process.env.EMAIL_2);
-            console.log(process.env.PASSWORD_2);
-           
+    })           
   
 });
