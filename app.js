@@ -1,8 +1,11 @@
+require("dotenv").config();
 const express = require("express");
 const ejs= require("ejs");
 const bodyParser= require("body-parser");
 const mongoose= require("mongoose");
 const lodash= require("lodash");
+const session= require("express-session");
+const bcrypt= require("bcrypt");
 
 const app= express();
 
@@ -10,7 +13,27 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+app.use(session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: false
+}));
+
+
 mongoose.connect("mongodb://127.0.0.1:27017/myProjectsDB", {useNewUrlParser: true});
+
+const adminSchema = new mongoose.Schema({
+    email: { type: String, unique: true },
+    password: String
+  });
+
+
+// adminSchema.plugin(findOrCreate);
+
+const Admin= new mongoose.model("Admins", adminSchema);
+
+
+
 
 
 const projectSchema= new mongoose.Schema({
@@ -24,8 +47,6 @@ const projectSchema= new mongoose.Schema({
 
 
 const Project= new mongoose.model("project", projectSchema);
-
-
 
 app.get("/", function(req,res){
 
@@ -173,10 +194,42 @@ app.post("/:projectTitle", function(req,res){
     .catch((err)=>{
         console.log(err);
     })
-
-   
+ 
 })
 
-app.listen(3000, function() {
+app.listen(3000, function(req,res) {
     console.log("Server started on port 3000.");
+
+    Admin.find({email: process.env.EMAIL_2})
+    .then((foundAdmin)=>{
+        if(foundAdmin.length===0)
+        {
+            console.log("no admin found!");
+
+            const password= bcrypt.hashSync(process.env.PASSWORD_2,10);
+
+            const admin= new Admin({
+                email: process.env.EMAIL_2,
+                password: password,
+            })
+            admin.save();
+            console.log(password);
+            console.log("admin saved succesfully");
+
+        }
+        else{
+            
+            console.log("admin found!");
+        }
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+  
+
+            
+            console.log(process.env.EMAIL_2);
+            console.log(process.env.PASSWORD_2);
+           
+  
 });
