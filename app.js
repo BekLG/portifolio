@@ -169,18 +169,62 @@ app.post("/updateProject", function(req,res){
      })       
 })
 
-app.post("/:projectTitle", function(req,res){
 
+
+app.get("/login",function(req,res){
+    res.render("login");
+})
+
+app.post("/login", function(req, res) {
+    const username = req.body.username;
+    const password = req.body.password;
+  
+    Admin.find({email: username})
+      .then((foundAdmin) => {
+        if (foundAdmin.length === 0) {
+          console.log("no admins found!");
+          res.redirect('/login');
+        } else {
+          const storedHashedPassword = foundAdmin[0].password;
+          bcrypt.compare(password, storedHashedPassword, (err, result) => {
+            if (err || !result) {
+              // Invalid login credentials, redirect to login page
+              console.log("password didnt match");
+              res.redirect('/login');
+            } else {
+              // Valid login credentials, set session variable to indicate that the user is logged in
+              req.session.isLoggedIn = true;
+              // Redirect to dashboard
+              res.redirect('/admin');
+            }
+          });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+  
+
+
+
+
+
+
+
+
+
+
+app.post("/:projectTitle", function(req,res){
     
     const projectTitle= req.params.projectTitle;
     Project.find({title: projectTitle})
     .then((foundProject)=>{
         if(foundProject.length===0)
         {
-            console.log("no project found!");
+            console.log("no projects found!");
         }
         else{
-            
             res.render("detailedProject",
              {
                  title: foundProject[0].title,
@@ -194,8 +238,9 @@ app.post("/:projectTitle", function(req,res){
     .catch((err)=>{
         console.log(err);
     })
- 
 })
+
+
 
 app.listen(3000, function(req,res) {
     console.log("Server started on port 3000.");
@@ -215,12 +260,10 @@ app.listen(3000, function(req,res) {
             console.log(password);
         }
         else{
-            
             console.log("admin found!");
         }
     })
     .catch((err)=>{
         console.log(err);
     })           
-  
 });
