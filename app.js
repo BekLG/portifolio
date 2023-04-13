@@ -60,13 +60,21 @@ app.get("/", function(req,res){
 
 })
 app.get("/admin", function(req,res){
-    Project.find({})
-    .then((foundProjectArray)=>{
-        res.render("adminPage", { foundProjects: foundProjectArray })
-    })
-    .catch((err)=>{
-        console.log(err);
-    })
+
+    if(req.session.isLoggedIn === true)
+    {
+        Project.find({})
+        .then((foundProjectArray)=>{
+            res.render("adminPage", { foundProjects: foundProjectArray })
+        })
+        .catch((err)=>{
+            console.log(err);
+        })
+    }
+    else
+    {
+        res.redirect("/login");
+    }
 })
 
 app.post("/delete", function(req,res){
@@ -80,7 +88,6 @@ app.post("/delete", function(req,res){
       console.error(err);
     });
     res.redirect("/admin")
-
 })
 
 app.post("/editProject", function(req,res){ 
@@ -116,7 +123,15 @@ app.post("/editProject", function(req,res){
 })
 
 app.get("/addProject", function(req,res){
-    res.render("addProject");
+   
+    if(req.session.isLoggedIn === true)
+    {
+        res.render("addProject");
+    }
+    else
+    {
+        res.redirect("/login");
+    }
 })
 app.post("/addProject", function(req,res){
 
