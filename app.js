@@ -19,8 +19,10 @@ app.use(session({
     saveUninitialized: false
 }));
 
+const dbUsername= process.env.DB_USERNAME;
+const dbPassword= process.env.DB_PASSWORD;
+mongoose.connect("mongodb+srv://" + dbUsername + ":" + dbPassword + "@cluster0.uscnzob.mongodb.net/myProjectsDB", {useNewUrlParser: true});
 
-mongoose.connect("mongodb://127.0.0.1:27017/myProjectsDB", {useNewUrlParser: true});
 
 const adminSchema = new mongoose.Schema({
     email: { type: String, unique: true },
