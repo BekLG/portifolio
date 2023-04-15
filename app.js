@@ -27,15 +27,7 @@ const adminSchema = new mongoose.Schema({
     password: String
   });
 
-
-// adminSchema.plugin(findOrCreate);
-
 const Admin= new mongoose.model("Admins", adminSchema);
-
-
-
-
-
 const projectSchema= new mongoose.Schema({
     title: String,
     imageLink: String,
@@ -45,11 +37,9 @@ const projectSchema= new mongoose.Schema({
     demoLink: String
 });
 
-
 const Project= new mongoose.model("project", projectSchema);
 
 app.get("/", function(req,res){
-
     Project.find({})
     .then((foundProjectArray)=>{
         res.render("home", { foundProjects: foundProjectArray })
@@ -57,7 +47,6 @@ app.get("/", function(req,res){
     .catch((err)=>{
         console.log(err);
     })
-
 })
 app.get("/admin", function(req,res){
 
@@ -79,7 +68,6 @@ app.get("/admin", function(req,res){
 
 app.post("/delete", function(req,res){
     const projectId= req.body.projectId;
-
     Project.findByIdAndDelete(projectId)
     .then(() => {
       console.log("project deleted successfully.");
@@ -93,7 +81,6 @@ app.post("/delete", function(req,res){
 app.post("/editProject", function(req,res){ 
 
     const projectId= req.body.projectId;
-
     Project.findById(projectId)
     .then((foundProject)=>{
         const title= foundProject.title;
@@ -113,9 +100,6 @@ app.post("/editProject", function(req,res){
             githubLink: githubLink,
             demoLink: demoLink
         })
-    
-        console.log(title);
-
     })
     .catch((err)=>{
         console.log(err);
@@ -152,9 +136,7 @@ app.post("/addProject", function(req,res){
       });
     
       project.save();
-    
       res.redirect("/"); 
-
 })
 
 app.post("/updateProject", function(req,res){
@@ -183,9 +165,6 @@ app.post("/updateProject", function(req,res){
         console.log(err);
      })       
 })
-
-
-
 app.get("/login",function(req,res){
     res.render("login");
 })
@@ -219,16 +198,6 @@ app.post("/login", function(req, res) {
         console.log(err);
       });
   });
-  
-
-
-
-
-
-
-
-
-
 
 app.post("/:projectTitle", function(req,res){
     
@@ -255,12 +224,8 @@ app.post("/:projectTitle", function(req,res){
     })
 })
 
-
-
 app.listen(3000, function(req,res) {
     console.log("Server started on port 3000.");
-
-    
     Admin.find({email: process.env.EMAIL_1})
     .then((foundAdmin)=>{
         if(foundAdmin.length===0)
