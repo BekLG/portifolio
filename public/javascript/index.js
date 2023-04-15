@@ -13,6 +13,7 @@ $("#btnNightDay").click(function(){
     $(".about-text-intro-name").toggleClass("dark-item2");
     $("#btn-send").toggleClass("btn-outline-light");
     $("#btn-reset").toggleClass("btn-outline-light");
+    $(".svgpath2").toggleClass("dark1");
     
     if($("#btnNightDay").hasClass("btn-dark"))
     {
