@@ -45,7 +45,7 @@
         background-color: #333;
         color: #fff;
         text-transform: uppercase;
-        padding: 1rem 2rem;
+        padding: 1rem 1.5rem;
         border-radius: 2rem;
         font-size: 1rem;
       }
@@ -63,6 +63,9 @@
 
       .project-description {
         margin-bottom: 2rem;
+        margin: auto;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 1.1rem;
         padding-top: 3rem;
         padding-bottom: 3rem;
       }
@@ -78,13 +81,26 @@
         color: #fff;
         text-transform: uppercase;
         padding: 1rem 2rem;
-        border-radius: 2rem;
+        border-radius: 1rem;
         font-size: 1rem;
         margin: 0 1rem;
         transition: background-color 0.2s ease;
       }
 
       .project-buttons a:hover {
-        background-color: #666;
+          background-color: #00618bcb;
       }
     
+      @media (max-width: 544px)
+      {
+        .home-button {
+          visibility: hidden;
+        }
+        .project-buttons a {
+          padding: 1rem 1rem;
+          margin: 0 1rem;
+          border-radius: 1rem;
+        
+        }
+  
+      }
