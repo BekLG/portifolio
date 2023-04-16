@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "This is a simple web-based portfolio project created using HTML, CSS, JavaScript, and Bootstrap. The website includes a contact form, a dark mode feature, a download CV button, and an about page.",
   "main": "index.js",
+  "type": "module",
   "engines":{
     "node": "14.x"
   },
   "scripts": {
-    "start": "node app.js"
+    "start": "node index.js"
   },
   "author": "",
   "license": "ISC",
