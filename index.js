@@ -6,6 +6,7 @@ const mongoose= require("mongoose");
 const lodash= require("lodash");
 const session= require("express-session");
 const bcrypt= require("bcrypt");
+const path = require("path");
 
 const app= express();
 
