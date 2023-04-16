@@ -226,8 +226,8 @@ app.post("/:projectTitle", function(req,res){
     })
 })
 
-app.listen(process.env.PORT, function(req,res) {
-    console.log("Server started on port 3000.");
+app.listen(process.env.PORT || 5000, function(req,res) {
+    console.log("Server started.");
     Admin.find({email: process.env.EMAIL_1})
     .then((foundAdmin)=>{
         if(foundAdmin.length===0)
