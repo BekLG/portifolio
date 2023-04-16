@@ -10,6 +10,7 @@ const bcrypt= require("bcrypt");
 const app= express();
 
 app.set('view engine', 'ejs');
+app.set('views', __dirname/views);
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
