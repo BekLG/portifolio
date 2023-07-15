@@ -16,7 +16,14 @@
         <img src="<%=imageLink%>" alt="Project Image">
       </div>
       <div class="project-description">
-        <p><%=detailedDescription%></p>
+
+        <% const paragraph=detailedDescription %>
+        <% const paragraphs = paragraph.split('\n'); %>
+
+        <% paragraphs.forEach(p => { %>
+            <p><%= p %></p>
+        <% }); %>
+
       </div>
       <div class="project-buttons">
         <a href="<%=githubLink%>">Github</a>
